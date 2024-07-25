@@ -3,6 +3,16 @@ import os
 import argparse
 
 def resize_image(file_path,sizes:list[int] | None = None):
+    '''
+    Creates a new directory; **(resized)**, in the parent directory of the image. It then creates another directory inside "resized" with the name of the image, where it the stores the resized images.
+    
+    Parameters:
+        :param file_path: A filename (list[str]).
+        The absolute path of the file; image file.
+
+        :param (optional) sizes: (list[int]).
+        A list of sizes to be used as width and height (in pixels). E.g 20 will create a resized 20px by 20px image.
+    '''
     try:
         # Resize the image to multiple sizes
         sizes_to_generate = [20, 100, 300, 500] if sizes is None else sizes
